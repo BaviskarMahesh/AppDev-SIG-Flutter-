@@ -14,10 +14,10 @@ class AppRoutes{
         return MaterialPageRoute(builder: (_)=> const Loginscreen());
 
       case signup:
-        return MaterialPageRoute(builder: (_)=> const Signuppage());
+        return MaterialPageRoute(builder: (_)=> const SignUpPage());
 
       case home:
-        return MaterialPageRoute(builder: (_)=> const Homepage());
+        return MaterialPageRoute(builder: (_)=> const HomePage());
 
       default :
         return MaterialPageRoute(builder: (_)=> const Loginscreen());

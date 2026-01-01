@@ -36,7 +36,10 @@ class _LoginscreenState extends State<Loginscreen> {
      final width=MediaQuery.of(context).size.width;
     return  Scaffold(
       
-      appBar: AppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+      )
+      ,
       body: SingleChildScrollView(
         child: Padding(
           padding:   EdgeInsets.all( width*0.04),
@@ -46,7 +49,7 @@ class _LoginscreenState extends State<Loginscreen> {
               Text("Sign In",
               style: TextStyle(
                 color: Colors.black,
-                fontSize:height*0.03,
+                fontSize:height*0.038,
                 fontWeight: FontWeight.bold,
               ),),
               SizedBox(height: height*0.03),
@@ -105,7 +108,9 @@ class _LoginscreenState extends State<Loginscreen> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "Enter a password",
-                    contentPadding: EdgeInsets.symmetric(horizontal: 15),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 15,
+                    vertical: height*0.018),
+
                     hintStyle: TextStyle(color: Colors.grey),
                     suffixIcon: IconButton(onPressed:  (){
                       setState(() {
@@ -140,6 +145,26 @@ class _LoginscreenState extends State<Loginscreen> {
                   color: Colors.black,
                   fontSize: height*0.02,
                 ),)),
+              ),
+              SizedBox(height: height*0.025,),
+
+              //signup
+              GestureDetector(
+                onTap: (){
+                   Navigator.pushReplacementNamed(context, AppRoutes.signup);
+                },
+                child: RichText(text: TextSpan(text: "Don't have an account?",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: height*0.022,
+                ),
+                  children: const [
+                    TextSpan(
+                      text: "Sign up",
+                      style:  TextStyle(fontWeight: FontWeight.bold),
+                    )
+                  ]
+                )),
               )
 
             ],
